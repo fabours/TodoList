@@ -17,15 +17,16 @@
     <h1>my First AngularJS Project!</h1>
 
     <nav class="navbar navbar-default">
-      <div class="navbar-left">
+      <div class="navbar-left" ng-controller="HeaderController as headCtrl">
         <ul class="nav navbar-nav">
           <li><a href="#">TODO</a></li>
-          <li><a ui-sref="todoList"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> All</a></li>
-          <li><a ui-sref="todoActive"><label><input type="checkbox"> Active</label></a></li>
-          <li><a ui-sref="todoCompleted"><label><input type="checkbox"> Completed</label></a></li>
+          <li ng-class="{active: headCtrl.isActive('/todoList')}"><a ui-sref="todoList"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> All</a></li>
+          <li ng-class="{active: headCtrl.isActive('/todoActive')}"><a ui-sref="todoActive"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Active</a></li>
+          <li ng-class="{active: headCtrl.isActive('/todoCompleted')}"><a ui-sref="todoCompleted"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Completed</a></li>
         </ul>
       </div>
     </nav>
+
   </header>
 
   <!-- Container -->
@@ -39,8 +40,9 @@
 
   <script src="js/app.js"></script>
   <script src="js/controllers/todoController.js"></script>
+  <script src="js/controllers/headerController.js"></script>
   <script src="js/services/todoService.js"></script>
-  <script src="js/router/routes.js"></script>
+  <script src="js/routers/routes.js"></script>
   <script src="js/directives/todoDirective.js"></script>
 </body>
 
