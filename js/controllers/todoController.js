@@ -1,6 +1,6 @@
 myApp.controller('TodoController', function(TodoService) {
   var vm = this;
-  
+
   vm.newTodo = "";
   vm.todos = [];
 

@@ -3,19 +3,19 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('todoList', {
       url: '/todoList',
-      templateUrl: 'partial-todoList.html',
+      templateUrl: 'html/partial-todoList.html',
       controller: 'TodoController',
       controllerAs: 'todoCtrl'
     })
     .state('todoActive', {
       url: '/todoActive',
-      templateUrl: 'partial-todoActive.html',
+      templateUrl: 'html/partial-todoActive.html',
       controller: 'TodoController',
       controllerAs: 'todoCtrl'
     })
     .state('todoCompleted', {
       url: '/todoCompleted',
-      templateUrl: 'partial-todoCompleted.html',
+      templateUrl: 'html/partial-todoCompleted.html',
       controller: 'TodoController',
       controllerAs: 'todoCtrl'
     })

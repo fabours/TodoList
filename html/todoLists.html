@@ -1,0 +1,16 @@
+<div ng-if="todoCtrl.todos.length !== 0 && done == null">Tasks <span class="redTasksNb">{{todoCtrl.todos.length}}</span></div>
+<div ng-if="done != null && todoCtrl.todos.length !== 0">
+  <span ng-if="done">Tasks completed </span>
+  <span ng-if="!done">Tasks active </span>
+  <span class="redTasksNb">{{(todoCtrl.todos|filter:{done:done}).length}}</span>
+</div>
+
+<ul  class="list-group" id="todo-list">
+  <li ng-if="done == null" class="list-group-item change-color" ng-repeat="todo in todoCtrl.todos" ng-click="todoCtrl.update(todo)" ng-model="todo.done">
+    <span class="done-{{todo.done}}">{{todo.name}}</span>
+  </li>
+  <li ng-if="done == todo.done" class="list-group-item change-color" ng-repeat="todo in todoCtrl.todos" ng-click="todoCtrl.update(todo)" ng-model="todo.done">
+    <span class="done-{{todo.done}}">{{todo.name}}</span>
+  </li>
+</ul>
+<button ng-if="done == null" class="btn btn-danger" ng-click="todoCtrl.clearCompletedTodos()"><span class="glyphicon glyphicon-trash"></span> Remove completed tasks</button>
