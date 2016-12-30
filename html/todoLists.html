@@ -7,10 +7,10 @@
 
 <ul  class="list-group" id="todo-list">
   <li ng-if="done == null" class="list-group-item change-color" ng-repeat="todo in todoCtrl.todos" ng-click="todoCtrl.update(todo)" ng-model="todo.done">
-    <span class="done-{{todo.done}}">{{todo.name}}</span>
+    <span class="done-{{todo.done}}">{{::todo.name}}</span>
   </li>
   <li ng-if="done == todo.done" class="list-group-item change-color" ng-repeat="todo in todoCtrl.todos" ng-click="todoCtrl.update(todo)" ng-model="todo.done">
-    <span class="done-{{todo.done}}">{{todo.name}}</span>
+    <span class="done-{{todo.done}}">{{::todo.name}}</span>
   </li>
 </ul>
 <button ng-if="done == null" class="btn btn-danger" ng-click="todoCtrl.clearCompletedTodos()"><span class="glyphicon glyphicon-trash"></span> Remove completed tasks</button>

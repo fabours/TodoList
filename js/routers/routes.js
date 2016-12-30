@@ -1,6 +1,8 @@
-myApp.config(function($stateProvider, $urlRouterProvider) {
-  $urlRouterProvider.otherwise('/todoList');
-  $stateProvider
+(function() {
+  "use strict";
+  angular.module('myApp').config(["$stateProvider","$urlRouterProvider", function($stateProvider, $urlRouterProvider) {
+    $urlRouterProvider.otherwise('/todoList');
+    $stateProvider
     .state('todoList', {
       url: '/todoList',
       templateUrl: 'html/partial-todoList.html',
@@ -20,4 +22,6 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
       controllerAs: 'todoCtrl'
     })
     ;
-});
+  }
+  ]);
+})();
