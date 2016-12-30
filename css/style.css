@@ -3,6 +3,10 @@
   max-width: 400px;
 }
 
+.label-primary {
+  font-size: 16px !important;
+}
+
 span.redTasksNb {
   background: red;
    border-radius: 0.6em;
@@ -22,7 +26,6 @@ span.redTasksNb {
   font-style: italic;
 	text-decoration: line-through;
 }
-
 .change-color {
     transition: 0.4s all;
 }
