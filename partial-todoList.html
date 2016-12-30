@@ -1,0 +1,16 @@
+
+  <div class="input-group" id="addTaskGroup">
+    <input type="text" ng-model="todoCtrl.newTodo" class="form-control" placeholder="Add new task..."/>
+    <span class="input-group-btn">
+      <button type="button" ng-click="todoCtrl.addTodo()" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></button>
+    </span>
+  </div>
+
+  <br/>
+  <div ng-if="todoCtrl.todos.length !== 0">Tasks <span class="redTasksNb">{{todoCtrl.todos.length}}</span></div>
+  <ul  class="list-group" id="todo-list">
+    <li class="list-group-item change-color" ng-repeat="todo in todoCtrl.todos" ng-click="todoCtrl.update(todo)" ng-model="todo.done">
+      <span class="done-{{todo.done}}">{{todo.name}}</span>
+    </li>
+  </ul>
+  <button class="btn btn-danger" ng-click="todoCtrl.clearCompletedTodos()"><span class="glyphicon glyphicon-trash"></span> Remove completed tasks</button>

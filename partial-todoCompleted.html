@@ -1,0 +1,6 @@
+<div ng-if="todoCtrl.todos.length !== 0">Tasks completed <span class="redTasksNb">{{(todoCtrl.todos|filter:{done:true}).length}}</span></div>
+<ul  class="list-group" id="todo-list">
+  <li ng-if="todo.done == true" class="list-group-item change-color" ng-repeat="todo in todoCtrl.todos" ng-click="todoCtrl.update(todo)" ng-model="todo.done">
+    <span class="done-{{todo.done}}">{{todo.name}}</span>
+  </li>
+</ul>
